@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:int="http://www.springframework.org/schema/integration"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration-2.1.xsd">
+
+    <int:channel id="otherMessageChannel">
+        <int:queue capacity="10"/>
+    </int:channel>
+
+    <int:transformer input-channel="startupChannel" expression="'@otherServiceActivator.start()'"
+                     output-channel="controlBusChannel"/>
+    <int:service-activator id="otherServiceActivator" input-channel="otherMessageChannel"
+                           ref="otherServiceActivatorService" auto-startup="false">
+        <int:poller fixed-rate="0" error-channel="loggingChannel" receive-timeout="60000"/>
+    </int:service-activator>
+
+    <int:channel id="otherMessageChannel1">
+        <int:queue capacity="10"/>
+    </int:channel>
+
+    <int:transformer input-channel="startupChannel" expression="'@otherServiceActivator1.start()'"
+                     output-channel="controlBusChannel"/>
+
+    <int:service-activator id="otherServiceActivator1" input-channel="otherMessageChannel1"
+                           ref="otherServiceActivatorService" auto-startup="false">
+        <int:poller fixed-rate="0" error-channel="loggingChannel" receive-timeout="60000"/>
+    </int:service-activator>
+
+    <int:channel id="otherMessageChannel2">
+        <int:queue capacity="10"/>
+    </int:channel>
+
+    <int:transformer input-channel="startupChannel" expression="'@otherServiceActivator2.start()'"
+                     output-channel="controlBusChannel"/>
+
+    <int:service-activator id="otherServiceActivator2" input-channel="otherMessageChannel2"
+                           ref="otherServiceActivatorService" auto-startup="false">
+        <int:poller fixed-rate="0" error-channel="loggingChannel" receive-timeout="60000"/>
+    </int:service-activator>
+
+    <int:channel id="otherMessageChannel3">
+        <int:queue capacity="10"/>
+    </int:channel>
+    <int:transformer input-channel="startupChannel" expression="'@otherServiceActivator3.start()'"
+                     output-channel="controlBusChannel"/>
+
+    <int:service-activator id="otherServiceActivator3" input-channel="otherMessageChannel3"
+                           ref="otherServiceActivatorService" auto-startup="false">
+        <int:poller fixed-rate="0" error-channel="loggingChannel" receive-timeout="60000"/>
+    </int:service-activator>
+
+    <int:channel id="otherMessageChannel4">
+        <int:queue capacity="10"/>
+    </int:channel>
+    <int:transformer input-channel="startupChannel" expression="'@otherServiceActivator4.start()'"
+                     output-channel="controlBusChannel"/>
+
+    <int:service-activator id="otherServiceActivator4" input-channel="otherMessageChannel4"
+                           ref="otherServiceActivatorService" auto-startup="false">
+        <int:poller fixed-rate="0" error-channel="loggingChannel" receive-timeout="60000"/>
+    </int:service-activator>
+
+    <int:channel id="otherMessageChannel5">
+        <int:queue capacity="10"/>
+    </int:channel>
+    <int:transformer input-channel="startupChannel" expression="'@otherServiceActivator5.start()'"
+                     output-channel="controlBusChannel"/>
+
+    <int:service-activator id="otherServiceActivator5" input-channel="otherMessageChannel5"
+                           ref="otherServiceActivatorService" auto-startup="false">
+        <int:poller fixed-rate="0" error-channel="loggingChannel" receive-timeout="60000"/>
+    </int:service-activator>
+
+    <int:channel id="otherMessageChannel6">
+        <int:queue capacity="10"/>
+    </int:channel>
+    <int:transformer input-channel="startupChannel" expression="'@otherServiceActivator6.start()'"
+                     output-channel="controlBusChannel"/>
+
+    <int:service-activator id="otherServiceActivator6" input-channel="otherMessageChannel6"
+                           ref="otherServiceActivatorService" auto-startup="false">
+        <int:poller fixed-rate="0" error-channel="loggingChannel" receive-timeout="60000"/>
+    </int:service-activator>
+
+    <int:channel id="otherMessageChannel7">
+        <int:queue capacity="10"/>
+    </int:channel>
+    <int:transformer input-channel="startupChannel" expression="'@otherServiceActivator7.start()'"
+                     output-channel="controlBusChannel"/>
+
+    <int:service-activator id="otherServiceActivator7" input-channel="otherMessageChannel7"
+                           ref="otherServiceActivatorService" auto-startup="false">
+        <int:poller fixed-rate="0" error-channel="loggingChannel" receive-timeout="60000"/>
+    </int:service-activator>
+
+    <int:channel id="otherMessageChannel8">
+        <int:queue capacity="10"/>
+    </int:channel>
+    <int:transformer input-channel="startupChannel" expression="'@otherServiceActivator8.start()'"
+                     output-channel="controlBusChannel"/>
+
+    <int:service-activator id="otherServiceActivator8" input-channel="otherMessageChannel8"
+                           ref="otherServiceActivatorService" auto-startup="false">
+        <int:poller fixed-rate="0" error-channel="loggingChannel" receive-timeout="60000"/>
+    </int:service-activator>
+
+    <int:channel id="otherMessageChannel9">
+        <int:queue capacity="10"/>
+    </int:channel>
+    <int:transformer input-channel="startupChannel" expression="'@otherServiceActivator9.start()'"
+                     output-channel="controlBusChannel"/>
+
+    <int:service-activator id="otherServiceActivator9" input-channel="otherMessageChannel9"
+                           ref="otherServiceActivatorService" auto-startup="false">
+        <int:poller fixed-rate="0" error-channel="loggingChannel" receive-timeout="60000"/>
+    </int:service-activator>
+</beans>
