@@ -1,6 +1,6 @@
 package com.giuliopulina;
 
-import org.springframework.integration.Message;
+import org.springframework.messaging.Message;
 import org.springframework.integration.jdbc.JdbcPollingChannelAdapter;
 
 import javax.print.attribute.IntegerSyntax;

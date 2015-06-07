@@ -1,6 +1,6 @@
 package com.giuliopulina;
 
-import org.springframework.integration.Message;
+import org.springframework.messaging.Message;
 
 /**
  * Created by giuli_000 on 01/06/2015.
